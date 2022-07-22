@@ -1,0 +1,1 @@
+export const URL_SET_ALL_PARAM = 'URL@@SET_ALL_PARAMS';
