@@ -1,4 +1,5 @@
 import Home from "./pages/Home";
+import Libs from "./pages/Libs/layout";
 
 const routes = [
   {
@@ -7,8 +8,9 @@ const routes = [
     exact: true,
   },
   {
-    path: '/:name',
-    component: Home,
+    path: '/libs/',
+    component: Libs,
+    exact: true
   },
 ];
 

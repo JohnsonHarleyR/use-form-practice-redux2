@@ -4,11 +4,18 @@ import { StringType } from "./constants/lib-enums";
 
 //#region Retrieve new lib from fake API
 
-export const getNewLibResult = () => {
+export const getRandomMadLib = () => {
   let lib = selectRandomLib();
-  let model = populateModLibDataModel(lib);
-  return model;
+  let arrays = createDataModelArrays(lib.text);
+  let result = {...arrays, title: lib.title};
+  return result;
 }
+
+// export const getNewLibResult = () => {
+//   let lib = selectRandomLib();
+//   let model = populateModLibDataModel(lib);
+//   return model;
+// }
 
 
 
@@ -28,12 +35,12 @@ const selectRandomLib = () => {
 
 //#region Populate model methods
 
-const populateModLibDataModel = ({title, text}) => {
-  let arrays = createDataModelArrays(text);
+// const populateModLibDataModel = ({title, text}) => {
+//   let arrays = createDataModelArrays(text);
   
-  let model = new MadLibDataModel(title, arrays.libTextArray, arrays.fillTypeArray);
-  return model;
-}
+//   let model = new MadLibDataModel(title, arrays.libTextArray, arrays.fillTypeArray);
+//   return model;
+// }
 
 
 //#endregion

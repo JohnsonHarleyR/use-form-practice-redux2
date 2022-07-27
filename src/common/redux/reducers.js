@@ -13,16 +13,16 @@ export const initialState = {
 };
 
 export default function urlReducer(state = initialState, { type, payload }) {
-  console.log('url reducer');
+  //console.log('url reducer');
   switch (type) {
     case URL_SET_ALL_PARAM:
-      console.log(`URL_SET_ALL_PARAM`);
+      //console.log(`URL_SET_ALL_PARAM`);
       return {
         ...state,
         name: payload,
       };
     default:
-      console.log(`url reducer - default`);
+      //console.log(`url reducer - default`);
       return state;
   }
 }

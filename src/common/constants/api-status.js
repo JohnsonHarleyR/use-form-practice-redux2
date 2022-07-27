@@ -1,0 +1,9 @@
+const API_STATUS = {
+  GETTING: 'GETTING',
+  UPDATING: 'UPDATING',
+  DONE: 'DONE',
+  ERROR: 'ERROR',
+  SUCCESS: 'SUCCESS',
+};
+
+export default API_STATUS;

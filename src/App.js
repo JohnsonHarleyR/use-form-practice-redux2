@@ -4,17 +4,21 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import routes from './routes';
 import Home from './pages/Home';
+import Libs from './pages/Libs';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/libs/">
+            <Libs />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }

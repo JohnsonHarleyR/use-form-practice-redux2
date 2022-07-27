@@ -6,16 +6,16 @@ const initialState = {
 };
 
 const homeReducer = (state = initialState, action) => {
-  console.log('home reducer');
+  //console.log('home reducer');
   switch(action.type) {
     case TYPES.MAKE_AWESOME:
-      console.log(`MAKE_AWESOME - value: ${action.value}`);
+      //console.log(`MAKE_AWESOME - value: ${action.value}`);
       return {
         ...state,
         isAwesome: action.value,
       };
     default:
-      console.log(`home reducer - default`);
+      //console.log(`home reducer - default`);
       return {...state};
   }
 }

@@ -2,7 +2,7 @@ import actions from './actions';
 
 const helpMakeAwesome = () => (dispatch, getState) => {
   const state = getState();
-  console.log(`state: ${JSON.stringify(state)}`);
+  //console.log(`state: ${JSON.stringify(state)}`);
   if (!state.home.isAwesome) {
     alert `You are not awesome yet, but you will be!`;
     dispatch(actions.makeAwesome());
