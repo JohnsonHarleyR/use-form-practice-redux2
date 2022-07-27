@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import InputField from './InputField/layout';
 
 const Libs = ({
@@ -10,6 +11,8 @@ const Libs = ({
   setUserAnswer,
 }) => {
 
+  const { register, reset, handleSubmit } = useForm();
+
   const [formFields, setFormFields] = useState([]);
 
   //#region Effects
@@ -20,6 +23,7 @@ const Libs = ({
 
   useEffect(() => {
     if (fillTypeArray) {
+      reset();
       setFormFields(createFormFields());
     }
   }, [fillTypeArray]);
@@ -36,6 +40,7 @@ const Libs = ({
           <InputField 
             key={field.id}
             id={field.id}
+            name={`f${field.id}`}
             label={field.text}
             error={"Field is required."}
             userAnswerArray={userAnswerArray}
