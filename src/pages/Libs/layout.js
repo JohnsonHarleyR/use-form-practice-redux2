@@ -13,8 +13,7 @@ const Libs = ({
 
   return(
     <div>
-      Show up?
-      {/* {lib.title}; */}
+      <h2>Title: {title}</h2>
     </div>
   );
 
