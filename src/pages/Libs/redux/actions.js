@@ -21,7 +21,15 @@ const setAnswerValues = (userAnswerArray) => {
   }
 }
 
+const setMadLibResult = (result) => {
+  return {
+    type: TYPES.SET_MAD_LIB_RESULT,
+    textResultArray: result,
+  }
+}
+
 export default {
   getMadLib,
-  setAnswerValue: setAnswerValues,
+  setAnswerValues,
+  setMadLibResult,
 };

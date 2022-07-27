@@ -5,6 +5,7 @@ const initialState = {
   libTextArray: [],
   fillTypeArray: [],
   userAnswerArray: [],
+  textResultArray: [],
 }
 
 const madLibReducer = (state = initialState, action) => {
@@ -23,6 +24,11 @@ const madLibReducer = (state = initialState, action) => {
       return {
         ...state,
         userAnswerArray: action.userAnswerArray,
+      }
+    case TYPES.SET_MAD_LIB_RESULT:
+      return {
+        ...state,
+        textResultArray: action.textResultArray,
       }
     default:
       return state;

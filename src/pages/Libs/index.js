@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
-import { getNewMadLib, setUserAnswer } from "./redux/thunks";
+import { getNewMadLib, setUserAnswers, renderLibResult } from "./redux/thunks";
 
 import Libs from "./layout";
 
 const mapStateToProps = ({madLib}) => {
   return {
     title: madLib.title,
-    libTextArray: madLib.libTextArray,
     fillTypeArray: madLib.fillTypeArray,
-    userAnswerArray: madLib.userAnswerArray,
+    libResultArray: madLib.textResultArray,
   };
 };
 
 const mapDispatchToProps = {
   getNewMadLib,
-  setUserAnswer,
+  setUserAnswers,
+  renderLibResult,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Libs);

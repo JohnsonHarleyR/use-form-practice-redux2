@@ -20,7 +20,38 @@ export const setUserAnswers = (data) => async (
       value: data[`${array[i].id}`],
     });
   }
-  dispatch(actions.setAnswerValue(newArray));
+  dispatch(actions.setAnswerValues(newArray));
+}
+
+export const renderLibResult = () => async (
+  dispatch,
+  getState,
+) => {
+  const state = getState();
+  let libTextArray = state.madLib.libTextArray;
+  let userAnswers = state.madLib.userAnswerArray;
+
+  // put texts and answer texts in order - make into array
+  let combinedLength = libTextArray.length + userAnswers.length;
+
+  let newArray = Array(combinedLength).fill({});
+
+  // go through both arrays and populate new array accordingly
+  libTextArray.forEach(a => {
+    newArray[a.id - 1] = {
+      text: a.text,
+      class: 'lib-text',
+    };
+  });
+
+  userAnswers.forEach(a => {
+    newArray[a.id - 1] = {
+      text: a.value,
+      class: 'answer-text',
+    };
+  });
+
+  dispatch(actions.setMadLibResult(newArray));
 }
 
 export default {
