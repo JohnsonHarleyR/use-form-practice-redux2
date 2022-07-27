@@ -6,7 +6,7 @@ export const getNewMadLib = () => async (
   dispatch(actions.getMadLib());
 }
 
-export const setUserAnswer = (id, value) => async (
+export const setUserAnswers = (data) => async (
   dispatch,
   getState,
 ) => {
@@ -17,9 +17,7 @@ export const setUserAnswer = (id, value) => async (
     newArray.push({
       id: array[i].id,
       label: array[i].label,
-      value: array[i].id === id
-        ? value
-        : array[i].value,
+      value: data[`${array[i].id}`],
     });
   }
   dispatch(actions.setAnswerValue(newArray));
@@ -27,5 +25,5 @@ export const setUserAnswer = (id, value) => async (
 
 export default {
   getNewMadLib,
-  setUserAnswer,
+  setUserAnswers,
 };
