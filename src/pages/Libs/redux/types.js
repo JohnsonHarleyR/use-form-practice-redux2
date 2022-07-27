@@ -2,6 +2,7 @@
 
 const MAD_LIB_TYPES = {
   GET_MAD_LIB: 'GET_MAD_LIB',
+  SET_ANSWER_VALUES: 'SET_ANSWER_VALUES',
 };
 
 export default MAD_LIB_TYPES;

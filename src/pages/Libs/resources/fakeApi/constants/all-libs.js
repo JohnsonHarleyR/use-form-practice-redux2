@@ -2,7 +2,7 @@
 const AllLibs = [
   {
     title: "Test1",
-    text: "Hello, I am a |Occupation| from |Country|. I have a(n) |adjective| |animal| as a pet.",
+    text: "Hello, I am a |occupation title| from |country|. I have a(n) |adjective| |animal| as a pet.",
   },
 ];
 

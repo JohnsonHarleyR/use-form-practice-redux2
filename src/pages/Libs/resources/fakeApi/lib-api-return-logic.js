@@ -1,13 +1,15 @@
 import MadLibDataModel from "../../models/MadLibDataModel";
 import AllLibs from "./constants/all-libs";
 import { StringType } from "./constants/lib-enums";
+import { capitalizeFirstLetters } from '../../../../common/helpers/grammar-helper';
 
 //#region Retrieve new lib from fake API
 
 export const getRandomMadLib = () => {
   let lib = selectRandomLib();
   let arrays = createDataModelArrays(lib.text);
-  let result = {...arrays, title: lib.title};
+  let userAnswerArray = createEmptyUserAnswerArray(arrays.fillTypeArray);
+  let result = {...arrays, title: lib.title, userAnswerArray: userAnswerArray};
   return result;
 }
 
@@ -46,6 +48,18 @@ const selectRandomLib = () => {
 //#endregion
 
 //#region Logic
+
+const createEmptyUserAnswerArray = (fillTypeArray) => {
+  let userAnswerArray = [];
+  fillTypeArray.forEach(f => {
+    userAnswerArray.push({
+      id: f.id,
+      label: f.text,
+      value: null,
+    });
+  });
+  return userAnswerArray;
+}
 
 const createDataModelArrays = (text) => {
   // get indexes of all separators
@@ -86,7 +100,7 @@ const createDataModelArrays = (text) => {
     } else {
       fillTypeArray.push({
         id: count,
-        text: toAdd,
+        text: capitalizeFirstLetters(toAdd),
       });
       count++;
     }
